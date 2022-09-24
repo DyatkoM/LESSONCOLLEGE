@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Details", "Details\Details.
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SwimmingPool", "SwimmingPool\SwimmingPool.vcxproj", "{C88287CA-9D42-45D4-B6EF-A8F15C6171C5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LP4_1", "LP4_1\LP4_1.vcxproj", "{88EAC6A8-3EEA-4B06-8120-9E213E01F622}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{C88287CA-9D42-45D4-B6EF-A8F15C6171C5}.Release|x64.Build.0 = Release|x64
 		{C88287CA-9D42-45D4-B6EF-A8F15C6171C5}.Release|x86.ActiveCfg = Release|Win32
 		{C88287CA-9D42-45D4-B6EF-A8F15C6171C5}.Release|x86.Build.0 = Release|Win32
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Debug|x64.ActiveCfg = Debug|x64
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Debug|x64.Build.0 = Debug|x64
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Debug|x86.ActiveCfg = Debug|Win32
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Debug|x86.Build.0 = Debug|Win32
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Release|x64.ActiveCfg = Release|x64
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Release|x64.Build.0 = Release|x64
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Release|x86.ActiveCfg = Release|Win32
+		{88EAC6A8-3EEA-4B06-8120-9E213E01F622}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
