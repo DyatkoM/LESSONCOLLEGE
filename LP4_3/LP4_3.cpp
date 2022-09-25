@@ -8,17 +8,19 @@ using namespace std;
 int main()
 {
 	int number;
-	int k = 0;
+	int k = 1;
 	int i = 3;
 	cout << "num: ";
 	cin >> number;
-	
-	while (i < number) {
-		
-		i = pow(i, k);
-		k++;
+		for (int j = 1; j < number; j++)
+		{
+			k++;
+			i= i*3;
+			if (i < number) {
+				break;
+			}
 	}
-	cout << k-1 << endl;
+	cout << k<<endl;
 	while (number > 0)  {
 		k = number % 10;
 		if (number % 2 == 0) {
