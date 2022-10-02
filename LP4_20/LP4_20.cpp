@@ -38,7 +38,7 @@ int main()
 	cout << endl;
 	while (d != 0) {
 		if (isprime(s)) {
-			if (s <=2) {
+			if (s <1) {
 				cout << "Error";
 				break;
 			}
