@@ -91,7 +91,7 @@ void prois(int array[100][100], int n, int m)
 
 		}
 
-		s << "в каждом столбце произведение нечетных элементов" << "=" << h << endl;
+		s << "произведение нечетных элементов" << "=" << h << endl;
 	}
 	s.close();
 }
@@ -116,6 +116,18 @@ int ferst(int array[100][100], int n, int m) {
 	}
 	return t;
 }
+/*7. Проверить, в каждой ли строке все элементы четные.Ответ вывести на экран.*/
+void prov(int array[100][100], int n, int m) {
+	for (int i = 0; i <= n; i++)
+	{
+		for (int j = 0; j < m; j++) {
+			if (array[i][j] % 2 != 0) {
+				cout << "в строке элементы нечетные" << endl;
+				break;
+			}
+		}
+	}
+}
 int main()
 {
 
@@ -125,17 +137,20 @@ int main()
 	vivod(array, n, m);
 	cout << endl;
 	int minel=minEl(array, n, m);
-	cout << " минимальный элемент массива:" << minel<<"число повторений в массиве:";
+	cout << " минимальный элемент массива:" << minel<<" число повторений в массиве: ";
 	count(array, n, m);
 	cout << endl;
 	prois(array, n, m);
 	int fer=ferst(array, n, m);
-	cout << "первыый элемент массива нечетный равен:" << fer << endl;
+	cout << "первыый элемент массива нечетный равен: " << fer << endl;
 	/*5. Заменить в предпоследней строке все двузначные элементы на первый нечетный
 элемент.*/ 
 	for (int j = 0; j < m; j++) {
 		if ((array[3][j] >= -99 && array[3][j] <= -10) && (array[3][j] >= 99 && array[3][j] <= 10)) {
-			array[3][j] = 1;
+			array[3][j] = fer;
 		}
 	}
+	vivod(array, n, m);
+	prov(array, n, m);
+
 }
