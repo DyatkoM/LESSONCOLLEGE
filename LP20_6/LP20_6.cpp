@@ -77,36 +77,59 @@ int pr_otr(list** head, int a)
 }
 void second_nech(list** head, int add_inf)
 {
+   
     //добавление элемента перед вторым четным
-    int count = 0;
-    if (*head != NULL)
-    {
+    //первый эл должен быть четный!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    if (*head != NULL) {
         list* ptr;
         list* predptr;
         ptr = *head;
-        int b;
-        predptr = ptr;
-        ptr = ptr->next;
-        while (ptr != NULL)
-        {
-            b = ptr->data;
-            if (b % 2 == 0)
-            {
-                count++;
-            }
-            if (count == 2)
-            {
-                list* add = new list;
-                add->data = add_inf;
-                add->next = ptr;
-                predptr->next = add;
+        if (ptr->data % 2 != 0) {
+            predptr = ptr;
+            ptr = ptr->next;
+           /* while (ptr != NULL) {
+                if (ptr->data % 2 == 0) {
+                    list* add = new list;
+                    add->data = add_inf;
+                    add->next = ptr;
+                    predptr->next = add;
+                    predptr = predptr->next;
+
+                }
+                ptr = ptr->next;
+                predptr = predptr->next;
+
+            }*/
+        }
+        else {
+            list* add = new list;
+            add->data = add_inf;//запись инфы в поле data 1
+            add->next = ptr;
+           // *head = add;
+            predptr = ptr;
+            ptr = ptr->next;
+            int count = 0;
+            while (ptr != NULL) {
+               
+                if (ptr->data % 2 == 0) {
+                    count++;
+                }
+                if (count==1) {
+                    list* add = new list;
+                    add->data = add_inf;
+                    add->next = ptr;
+                    predptr->next = add;
+                    predptr = predptr->next;
+
+                }
+                ptr = ptr->next;
                 predptr = predptr->next;
             }
-            ptr = ptr->next;
-            predptr = predptr->next;
         }
     }
 }
+
+
 
 void add_before(list** head, int add_inf, int a) {
     //добавление элемента перед первым заданным.
@@ -205,5 +228,6 @@ int main()
         }
         }
     }
+
 
 
