@@ -49,18 +49,20 @@ void print_list(list** head) {
 		cout << endl;
 	}
 }
-//int largestElement(list** head)
-//{
-//  нахождение максимального элемента списка;
-//	list* ptr = *head;
-//	int max = INT_MIN;
-//	while (head != NULL) {
-//		if (max < ptr->data)
-//			max = ptr->data;
-//		ptr = ptr->next;
-//	}
-//	return max;
-//}
+int largestElement(list** head)
+{
+  //нахождение максимального элемента списка;
+	list* ptr = *head;
+	int a;
+	int max = INT_MIN;
+	while (head != NULL) {
+   a = ptr->data;
+		if (max < a)
+			max = ptr->data;
+		ptr = ptr->next;
+	}
+	return max;
+}
 void print_list_2(list** head) {
 	list* ptr = *head;
 	cout << "Список:\n";
@@ -155,7 +157,7 @@ int main()
 		case 2:
 		{
 			cout << "Нахождение максимального элемента списка:" << endl;
-			//cout << "наибольший эл:" << largestElement(head) << endl;
+			cout << "наибольший эл:" << largestElement(head) << endl;
 		}
 		case 3:
 		{

@@ -42,7 +42,7 @@ void print_list(list** head) {
     }
 }
 void del_after(list** head) {
-    //- добавление элемента в конец списка;
+    //- удаление элемента после каждого четного
     if (*head != NULL) {
         list* ptr;
         ptr = *head;
@@ -55,6 +55,88 @@ void del_after(list** head) {
                     delete del;
                 }
             }
+            ptr = ptr->next;
+        }
+    }
+}
+int pr_otr(list** head, int a)
+{
+    //подсчет суммы элементов, значение которых меньше заданного
+    list* ptr = *head;
+    int pr = 0;
+
+    while (ptr != NULL)
+    {
+        if (ptr->data < a)
+        {
+            pr += ptr->data;
+        }
+        ptr = ptr->next;
+    }
+    return pr;
+}
+void second_nech(list** head, int add_inf)
+{
+    //добавление элемента перед вторым четным
+    int count = 0;
+    if (*head != NULL)
+    {
+        list* ptr;
+        list* predptr;
+        ptr = *head;
+        int b;
+        predptr = ptr;
+        ptr = ptr->next;
+        while (ptr != NULL)
+        {
+            b = ptr->data;
+            if (b % 2 == 0)
+            {
+                count++;
+            }
+            if (count == 2)
+            {
+                list* add = new list;
+                add->data = add_inf;
+                add->next = ptr;
+                predptr->next = add;
+                predptr = predptr->next;
+            }
+            ptr = ptr->next;
+            predptr = predptr->next;
+        }
+    }
+}
+
+void add_before(list** head, int add_inf, int a) {
+    //добавление элемента перед первым заданным.
+    if (*head != NULL) {
+        list* ptr;
+        list* predptr;
+        ptr = *head;
+        if (ptr->data != a) {
+            predptr = ptr;
+            ptr = ptr->next;
+            while (ptr != NULL) {
+                if (ptr->data == a) {
+                    list* add = new list;
+                    add->data = add_inf;
+                    add->next = ptr;
+                    predptr->next = add;
+                    predptr = predptr->next;
+                   
+                }
+                ptr = ptr->next;
+                predptr = predptr->next;
+               
+            }
+        }
+        else {
+            list* add = new list;
+            add->data = add_inf;
+            add->next = ptr;
+            *head = add;
+            predptr = ptr;
             ptr = ptr->next;
         }
     }
@@ -90,6 +172,35 @@ int main()
         case 2:
         {
             del_after(head); print_list(head);
+            break;
+        }
+        case 3:
+        {
+            int a;
+            cout << " Введите значение для подсчета суммы эл меньше его ";
+            cin >> a;
+            cout << "подсчет суммы элементов, значение которых меньше заданного" << pr_otr(head,a) << endl;
+            print_list(head);
+            break;
+        }
+        case 4: {
+            //4. добавление элемента перед вторым четным 
+            cout << "Введите добавляемое значение " << endl;
+            cin >> add_inf;
+            second_nech(head, add_inf);
+            print_list(head);
+            break;
+        }
+        
+        case 5: {
+            //добавление элемента перед первым заданным
+            int a, z;
+          
+            cout << " Введите добавляемое значение ";
+            cin >> a;
+            cout << " Введите перед чем добавить ";
+            cin >> z;
+            add_before(head, a, z); print_list(head);
             break; }
         }
         }
